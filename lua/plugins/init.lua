@@ -19,6 +19,9 @@ vim.pack.add({
 { src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
 { src = 'https://github.com/nvim-mini/mini.pairs', version = 'stable' },
 
+-- picker, grep, buffer search
+{ src = "https://github.com/dmtrKovalenko/fff.nvim"}
+
 })
 -- Colour Scheme
 vim.cmd.colorscheme('melange')
@@ -50,4 +53,19 @@ require("mini.pairs").setup({
 	}
 })
 
+-- Picker
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == 'fff.nvim' and (kind == 'install' or kind == 'update') then
+      if not ev.data.active then vim.cmd.packadd('fff.nvim') end
+      require('fff.download').download_or_build_binary()
+    end
+  end,
+})
 
+vim.g.fff = {
+  lazy_sync = true,
+  debug = { enabled = true, show_scores = true },
+}
+require("fff").setup()

@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "fff.nvim": {
+      "rev": "8092cfa3faf3471d29b3e11049e921d7e759d789",
+      "src": "https://github.com/dmtrKovalenko/fff.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "0a695750d747db1e7e70bcf0267ef8951c95fc83",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
