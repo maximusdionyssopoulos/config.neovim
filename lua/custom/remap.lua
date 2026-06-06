@@ -13,3 +13,9 @@ vim.keymap.set('n', '<leader>/', function() require("fff").live_grep() end, {des
 --- Helpers
 vim.keymap.set("n", '<leader>y', function() vim.fn.setreg("+", vim.fn.expand("%:p")) end, {desc = "Copy absolute path"})
 vim.keymap.set("n", '<leader>yy', function() vim.fn.setreg("+", vim.fn.expand("%:.")) end, {desc = "Copy relative path"})
+
+-- Split navigation
+vim.keymap.set('n', '<C-H>', '<C-w>h', { desc = 'Focus on left window' })
+vim.keymap.set('n', '<C-J>', '<C-w>j', { desc = 'Focus on below window' })
+vim.keymap.set('n', '<C-K>', '<C-w>k', { desc = 'Focus on above window' })
+vim.keymap.set('n', '<C-L>', '<C-w>l', { desc = 'Focus on right window' })
