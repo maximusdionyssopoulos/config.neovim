@@ -4,6 +4,7 @@ vim.keymap.set("n", "<leader>b", "<cmd>buffers<CR>")
 -- PLUGINS
 -- OIL
 vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>E", "<CMD>Oil.<CR>", { desc = "Open current working directory" })
 
 -- FFF
 vim.keymap.set('n', '<leader><leader>', function() require('fff').find_files() end, { desc = 'FFFind files' })
