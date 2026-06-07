@@ -24,9 +24,9 @@ vim.pack.add({
 { src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
 { src = 'https://github.com/nvim-mini/mini.pairs' },
 
--- picker, grep, buffer search
+-- picker, grep 
 { src = "https://github.com/dmtrKovalenko/fff.nvim" },
-{ src = "https://github.com/nvim-mini/mini.pick" },
+
 
 })
 -- Colour Scheme
@@ -84,15 +84,5 @@ vim.g.fff = {
   lazy_sync = true,
   debug = { enabled = true, show_scores = true },
 }
-require("fff").setup()
+require("fff").setup({})
 
-local win_config = function()
-    local height = math.floor(0.618 * vim.o.lines)
-    local width = math.floor(0.618 * vim.o.columns)
-    return {
-      anchor = 'NW', height = height, width = width,
-      row = math.floor(0.5 * (vim.o.lines - height)),
-      col = math.floor(0.5 * (vim.o.columns - width)),
-    }
-end
-require("mini.pick").setup( { window = { config = win_config }, options = { content_from_bottom = true } })
