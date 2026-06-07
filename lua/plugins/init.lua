@@ -5,10 +5,15 @@ vim.pack.add({
 -- files
 { src = "https://github.com/stevearc/oil.nvim" },
 
+-- completion
+{ src = 'https://github.com/saghen/blink.lib' },
+{ src = 'https://github.com/Saghen/blink.cmp' },
+
 -- lsp 
 { src = 'https://github.com/neovim/nvim-lspconfig' },
 { src = 'https://github.com/mason-org/mason.nvim' },
 { src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
+
 
 -- treesitter
 { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
@@ -46,6 +51,10 @@ require("oil").setup({
 -- LSP
 require("mason").setup()
 require("mason-lspconfig").setup()
+
+local cmp = require("blink.cmp")
+cmp.build():pwait()
+cmp.setup()
 
 -- Treesitter
 require('nvim-treesitter').setup()

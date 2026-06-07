@@ -1,5 +1,13 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "3db7326f54b73df4789e0fd6274bedda33975fea",
+      "src": "https://github.com/Saghen/blink.cmp"
+    },
+    "blink.lib": {
+      "rev": "b127d48bf8e9ac9cf41f6e0fbead317503f76558",
+      "src": "https://github.com/saghen/blink.lib"
+    },
     "fff.nvim": {
       "rev": "8092cfa3faf3471d29b3e11049e921d7e759d789",
       "src": "https://github.com/dmtrKovalenko/fff.nvim"
