@@ -26,8 +26,6 @@ vim.pack.add({
 
 -- picker, grep 
 { src = "https://github.com/dmtrKovalenko/fff.nvim" },
-
-
 })
 -- Colour Scheme
 vim.cmd.colorscheme('melange')
