@@ -1,6 +1,6 @@
 require("plugins")
 require("lsp")
-require("custom.remap")
+require("custom.re+keymap")
 require("custom.ui")
 
 -- Always use system clipboard
