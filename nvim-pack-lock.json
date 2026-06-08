@@ -8,6 +8,10 @@
       "rev": "b127d48bf8e9ac9cf41f6e0fbead317503f76558",
       "src": "https://github.com/saghen/blink.lib"
     },
+    "conform.nvim": {
+      "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
     "fff.nvim": {
       "rev": "8092cfa3faf3471d29b3e11049e921d7e759d789",
       "src": "https://github.com/dmtrKovalenko/fff.nvim"

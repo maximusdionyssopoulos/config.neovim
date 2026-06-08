@@ -1,34 +1,36 @@
 vim.pack.add({
--- colorscheme
-{ src = "https://github.com/savq/melange-nvim" },
+  -- colorscheme
+  { src = "https://github.com/savq/melange-nvim" },
 
--- files
-{ src = "https://github.com/stevearc/oil.nvim" },
+  -- files
+  { src = "https://github.com/stevearc/oil.nvim" },
 
--- completion
-{ src = 'https://github.com/saghen/blink.lib' },
-{ src = 'https://github.com/Saghen/blink.cmp' },
+  -- completion
+  { src = "https://github.com/saghen/blink.lib" },
+  { src = "https://github.com/Saghen/blink.cmp" },
 
--- lsp 
-{ src = 'https://github.com/neovim/nvim-lspconfig' },
-{ src = 'https://github.com/mason-org/mason.nvim' },
-{ src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
+  -- lsp
+  { src = "https://github.com/neovim/nvim-lspconfig" },
+  { src = "https://github.com/mason-org/mason.nvim" },
+  { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 
+  -- treesitter
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/windwp/nvim-ts-autotag" },
+  { src = "https://github.com/rrethy/nvim-treesitter-endwise" },
 
--- treesitter
-{ src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
-{ src = 'https://github.com/windwp/nvim-ts-autotag' },
-{ src = 'https://github.com/rrethy/nvim-treesitter-endwise'},
+  -- formatter
+  { src = "https://github.com/stevearc/conform.nvim" },
 
--- helpers
-{ src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
-{ src = 'https://github.com/nvim-mini/mini.pairs' },
+  -- helpers
+  { src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
+  { src = "https://github.com/nvim-mini/mini.pairs" },
 
--- picker, grep 
-{ src = "https://github.com/dmtrKovalenko/fff.nvim" },
+  -- picker, grep
+  { src = "https://github.com/dmtrKovalenko/fff.nvim" },
 })
 -- Colour Scheme
-vim.cmd.colorscheme('melange')
+vim.cmd.colorscheme("melange")
 
 -- Files
 require("plugins.oil")
@@ -39,9 +41,11 @@ require("plugins.cmp")
 -- Treesitter
 require("plugins.treesitter")
 
--- Helpers 
+-- Formatter
+require("plugins.formatter")
+
+-- Helpers
 require("plugins.extra")
 
 -- Picker
 require("plugins.fff")
-
