@@ -27,6 +27,9 @@ set('n', '<leader>/', function() require("fff").live_grep() end, {desc = "FFFind
 -- Buffers
 set("n", "<leader>,", function() require("mini.pick").builtin.buffers() end, { desc = "Pick from buffers"})
 set("n", "<leader>`", "<cmd>bn<CR>", { desc = "Go to next buffer"})
+set("n", "<leader>bd", ":bd<CR>", { desc = "Close buffer"})
+set("n", "<leader>bD", ":%bd<CR>", { desc = "Close All Buffers"})
+set("n", "<leader>bx", ":%bd|e#|bd#<CR>", { desc = "Close All Other Buffers"})
 
 -- LSP
 vim.api.nvim_create_autocmd("LspAttach", {
