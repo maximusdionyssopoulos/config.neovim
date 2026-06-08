@@ -22,13 +22,16 @@ vim.pack.add({
   -- formatter
   { src = "https://github.com/stevearc/conform.nvim" },
 
-  -- helpers
+  -- picker, grep
+  { src = "https://github.com/dmtrKovalenko/fff.nvim" },
+
+  -- extra
   { src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
   { src = "https://github.com/nvim-mini/mini.pairs" },
   { src = "https://github.com/nvim-mini/mini.indentscope" },
 
-  -- picker, grep
-  { src = "https://github.com/dmtrKovalenko/fff.nvim" },
+  -- git
+  { src = "https://github.com/lewis6991/gitsigns.nvim" },
 })
 -- Colour Scheme
 vim.cmd.colorscheme("melange")
@@ -50,3 +53,6 @@ require("plugins.extra")
 
 -- Picker
 require("plugins.fff")
+
+-- Git
+require("plugins.git")
