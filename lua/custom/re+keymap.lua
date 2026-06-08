@@ -3,8 +3,11 @@ vim.g.mapleader = " "
 local set = vim.keymap.set
 
 --- Helpers
-set("n", '<leader>y', function() vim.fn.setreg("+", vim.fn.expand("%:p")) end, {desc = "Copy absolute path"})
-set("n", '<leader>yy', function() vim.fn.setreg("+", vim.fn.expand("%:.")) end, {desc = "Copy relative path"})
+set("n", '<D-k>p', "<cmd>CopyAbsolutePath<cr>", {desc = "Copy absolute path"})
+set("n", '<D-k>pp', "<cmd>CopyRelativePath<cr>", {desc = "Copy relative path"})
+set({"n", "x"}, 'sy', '"+y', {desc = "Copy to system clipboard"})
+set("n", 'sp', '"+p', {desc = "Paste from system clipboard before cursor"})
+set("n", 'sp', '"+P', {desc = "Paste from system clipboard after cursor"})
 
 -- Split navigation
 set('n', '<C-H>', '<C-w>h', { desc = 'Focus on left window' })
