@@ -3,17 +3,17 @@ vim.g.mapleader = " "
 local set = vim.keymap.set
 
 --- Helpers
-set("n", '<D-k>p', "<cmd>CopyAbsolutePath<cr>", {desc = "Copy absolute path"})
-set("n", '<D-k>pp', "<cmd>CopyRelativePath<cr>", {desc = "Copy relative path"})
-set({"n", "x"}, 'sy', '"+y', {desc = "Copy to system clipboard"})
-set("n", 'sp', '"+p', {desc = "Paste from system clipboard before cursor"})
-set("n", 'sp', '"+P', {desc = "Paste from system clipboard after cursor"})
+set("n", "<D-k>p", "<cmd>CopyAbsolutePath<cr>", { desc = "Copy absolute path" })
+set("n", "<D-k>pp", "<cmd>CopyRelativePath<cr>", { desc = "Copy relative path" })
+set({ "n", "x" }, "sy", '"+y', { desc = "Copy to system clipboard" })
+set("n", "sp", '"+p', { desc = "Paste from system clipboard before cursor" })
+set("n", "sp", '"+P', { desc = "Paste from system clipboard after cursor" })
 
 -- Split navigation
-set('n', '<C-H>', '<C-w>h', { desc = 'Focus on left window' })
-set('n', '<C-J>', '<C-w>j', { desc = 'Focus on below window' })
-set('n', '<C-K>', '<C-w>k', { desc = 'Focus on above window' })
-set('n', '<C-L>', '<C-w>l', { desc = 'Focus on right window' })
+set("n", "<C-H>", "<C-w>h", { desc = "Focus on left window" })
+set("n", "<C-J>", "<C-w>j", { desc = "Focus on below window" })
+set("n", "<C-K>", "<C-w>k", { desc = "Focus on above window" })
+set("n", "<C-L>", "<C-w>l", { desc = "Focus on right window" })
 
 -- PLUGINS
 -- OIL
@@ -21,15 +21,15 @@ set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 set("n", "<leader>E", "<CMD>Oil.<CR>", { desc = "Open current working directory" })
 
 -- FFF
-set('n', '<leader><leader>', function() require('fff').find_files() end, { desc = 'FFFind files' })
-set('n', '<leader>/', function() require("fff").live_grep() end, {desc = "FFFind content (Grep)"})
+set("n", "<leader><leader>", function() require("fff").find_files() end, { desc = "FFFind files" })
+set("n", "<leader>/", function() require("fff").live_grep() end, { desc = "FFFind content (Grep)" })
 
 -- Buffers
-set("n", "<leader>,", function() require("mini.pick").builtin.buffers() end, { desc = "Pick from buffers"})
-set("n", "<leader>`", "<cmd>bn<CR>", { desc = "Go to next buffer"})
-set("n", "<leader>bd", ":bd<CR>", { desc = "Close buffer"})
-set("n", "<leader>bD", ":%bd<CR>", { desc = "Close All Buffers"})
-set("n", "<leader>bx", ":%bd|e#|bd#<CR>", { desc = "Close All Other Buffers"})
+set("n", "<leader>,", function() require("mini.pick").builtin.buffers() end, { desc = "Pick from buffers" })
+set("n", "<leader>`", "<cmd>bn<CR>", { desc = "Go to next buffer" })
+set("n", "<leader>bd", ":bd<CR>", { desc = "Close buffer" })
+set("n", "<leader>bD", ":%bd<CR>", { desc = "Close All Buffers" })
+set("n", "<leader>bx", ":%bd|e#|bd#<CR>", { desc = "Close All Other Buffers" })
 
 -- LSP
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -39,29 +39,35 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     set("n", "<leader>cl", "<cmd>checkhealth vim.lsp<cr>", opts("Lsp Info"))
 
-    set("n", "gd", vim.lsp.buf.definition,     opts("Goto Definition"))
-    set("n", "gr", vim.lsp.buf.references,     opts("References"))
+    set("n", "gd", vim.lsp.buf.definition, opts("Goto Definition"))
+    set("n", "gr", vim.lsp.buf.references, opts("References"))
     set("n", "gI", vim.lsp.buf.implementation, opts("Goto Implementation"))
     set("n", "gy", vim.lsp.buf.type_definition, opts("Goto T[y]pe Definition"))
-    set("n", "gD", vim.lsp.buf.declaration,    opts("Goto Declaration"))
-    set("n", "gO", vim.lsp.buf.document_symbol,    opts("Document Symbols"))
+    set("n", "gD", vim.lsp.buf.declaration, opts("Goto Declaration"))
+    set("n", "gO", vim.lsp.buf.document_symbol, opts("Document Symbols"))
 
-    set("n", "K",     vim.lsp.buf.hover,           opts("Hover"))
-    set("n", "gK",    vim.lsp.buf.signature_help,  opts("Signature Help"))
-    set("i", "<c-k>", vim.lsp.buf.signature_help,  opts("Signature Help"))
+    set("n", "K", vim.lsp.buf.hover, opts("Hover"))
+    set("n", "gK", vim.lsp.buf.signature_help, opts("Signature Help"))
+    set("i", "<c-k>", vim.lsp.buf.signature_help, opts("Signature Help"))
 
     set({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
-    set({ "n", "x" }, "<leader>cc", vim.lsp.codelens.run,    opts("Run Codelens"))
-    set("n",          "<leader>cC", function() vim.lsp.codelens.enable(true) end, opts("Refresh & Display Codelens"))
-    set("n",          "<leader>cr", vim.lsp.buf.rename,       opts("Rename"))
+    set({ "n", "x" }, "<leader>cc", vim.lsp.codelens.run, opts("Run Codelens"))
+    set("n", "<leader>cC", function() vim.lsp.codelens.enable(true) end, opts("Refresh & Display Codelens"))
+    set("n", "<leader>cr", vim.lsp.buf.rename, opts("Rename"))
 
-    set({ "n", "x" }, "<leader>cA", function()
-      vim.lsp.buf.code_action({ context = { only = { "source" }, diagnostics = {} } })
-    end, opts("Source Action"))
+    set(
+      { "n", "x" },
+      "<leader>cA",
+      function() vim.lsp.buf.code_action({ context = { only = { "source" }, diagnostics = {} } }) end,
+      opts("Source Action")
+    )
 
-    set("n", "<leader>co", function()
-      vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" }, diagnostics = {} } })
-    end, opts("Organize Imports"))
+    set(
+      "n",
+      "<leader>co",
+      function() vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" }, diagnostics = {} } }) end,
+      opts("Organize Imports")
+    )
 
     set("n", "gai", vim.lsp.buf.incoming_calls, opts("Calls Incoming"))
     set("n", "gao", vim.lsp.buf.outgoing_calls, opts("Calls Outgoing"))
