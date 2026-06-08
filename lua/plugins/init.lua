@@ -25,6 +25,7 @@ vim.pack.add({
   -- helpers
   { src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("4.x") },
   { src = "https://github.com/nvim-mini/mini.pairs" },
+  { src = "https://github.com/nvim-mini/mini.indentscope" },
 
   -- picker, grep
   { src = "https://github.com/dmtrKovalenko/fff.nvim" },
