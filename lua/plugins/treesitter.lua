@@ -1,3 +1,4 @@
 require("nvim-treesitter").setup()
+
+require("nvim-treesitter").install({ "ruby" })
 require("nvim-ts-autotag").setup()
--- require("nvim-treesitter-endwise").setup()
