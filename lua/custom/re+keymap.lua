@@ -24,7 +24,6 @@ set("n", "<leader><leader>", function() require("fff").find_files() end, { desc 
 set("n", "<leader>/", function() require("fff").live_grep() end, { desc = "FFFind content (Grep)" })
 
 -- Buffers
-set("n", "<leader>,", function() require("mini.pick").builtin.buffers() end, { desc = "Pick from buffers" })
 set("n", "<leader>`", "<cmd>bn<CR>", { desc = "Go to next buffer" })
 set("n", "<leader>bd", ":bd<CR>", { desc = "Close buffer" })
 set("n", "<leader>bD", ":%bd<CR>", { desc = "Close All Buffers" })
