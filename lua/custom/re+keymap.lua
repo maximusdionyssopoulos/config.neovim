@@ -3,8 +3,8 @@ vim.g.mapleader = " "
 local set = vim.keymap.set
 
 --- Helpers
-set("n", "<D-k>p", "<cmd>CopyAbsolutePath<cr>", { desc = "Copy absolute path" })
-set("n", "<D-k>pp", "<cmd>CopyRelativePath<cr>", { desc = "Copy relative path" })
+set("n", "<leader>ya", "<cmd>CopyAbsolutePath<cr>", { desc = "Copy absolute path" })
+set("n", "<leader>yr", "<cmd>CopyRelativePath<cr>", { desc = "Copy relative path" })
 set({ "n", "x" }, "sy", '"+y', { desc = "Copy to system clipboard" })
 set({ "n", "x" }, "sp", '"+p', { desc = "Paste from system clipboard" })
 
