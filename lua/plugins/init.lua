@@ -15,9 +15,10 @@ vim.pack.add({
   { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 
   -- treesitter
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/windwp/nvim-ts-autotag" },
   { src = "https://github.com/tpope/vim-endwise" },
+  { src = "https://github.com/folke/ts-comments.nvim" },
 
   -- formatter
   { src = "https://github.com/stevearc/conform.nvim" },
