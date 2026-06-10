@@ -12,4 +12,8 @@ vim.g.fff = {
   lazy_sync = true,
   debug = { enabled = true, show_scores = true },
 }
-require("fff").setup({})
+require("fff").setup({
+  keymaps = {
+    cycle_grep_modes = "<M-Tab>",
+  },
+})
