@@ -338,5 +338,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 --#endregion
 
 --#region: CUSTOM
-require("lua.set-theme")
+require("set-theme")
 --#endregion
